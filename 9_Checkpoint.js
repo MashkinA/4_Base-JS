@@ -60,7 +60,7 @@ function getMonthByNumber(monthnumber) {
 
 // 5
 
-const rub = 23322;
+const rub = 10;
 const othervalue = 'EUR';
 
 convertRub(rub, othervalue);
