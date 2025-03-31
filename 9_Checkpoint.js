@@ -61,26 +61,26 @@ function getMonthByNumber(monthnumber) {
 // 5
 
 const rub = 10;
-const othervalue = 'EUR';
+const othervalue = 'AED';
 
 convertRub(rub, othervalue);
 
 function convertRub(valuerub, currency) {
     
     switch (currency) {
-        case (currency = 'USD'):
+        case 'USD':
             const USD = (valuerub * 100);
             console.log(USD);
             break;
-        case (currency = 'EUR'):
+        case 'EUR':
             const EUR = (valuerub * 90);
             console.log(EUR);
             break;
-        case (currency = 'KZT'):
+        case 'KZT':
             const KZT = valuerub*0.17;
             console.log(KZT);
             break;
-        case (currency = 'AED'):
+        case 'AED':
             const AED = valuerub*23;
             console.log(AED);
             break;
