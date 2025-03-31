@@ -1,17 +1,18 @@
 // Ввод и вывод данных
 
-let a = 1;
-
 // alert()
-
-switch (a) {
-  case 1:
-    console.log('alert');
-    break;
-}
 
 // confirm()
 
-confirm('PLs');
-
 // promt()
+
+const age = parseInt(prompt('Введите свой возраст'));
+
+if (isAdult(age)) {
+    alert('Вход подтвержден');
+} else {
+    alert('Вход запрещен');
+}
+function isAdult(age) {
+    return age >= 18;
+}
