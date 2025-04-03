@@ -1,3 +1,40 @@
 body {
     font-family: 'Manrope';
 }
+
+.counter {
+    margin: auto;
+    width: 80%;
+    box-sizing: border-box;
+}
+.counter_button {
+    margin-top: 50px;
+    width: 500px;
+    height: 100px;
+    color: azure;
+    background-color: blue;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid blue;
+    display: block;
+    font-size: 30px;
+    line-height: 30px;
+    font-family: 'Manrope';
+    font-weight: 500;
+}
+.counter_button:hover {
+    color: blue;
+    background-color: white;
+    cursor: pointer;
+}
+.counter_p {
+    margin-top: 150px;
+    text-align: center;    
+    width: 500px;
+    height: 20px;
+    display: block;
+    font-size: 20px;
+    line-height: 20px;
+    font-family: 'Manrope';
+    font-weight: 500;
+}
