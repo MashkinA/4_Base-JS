@@ -8,7 +8,7 @@ body {
     box-sizing: border-box;
 }
 .counter_button {
-    margin-top: 50px;
+    margin: auto;
     width: 500px;
     height: 100px;
     color: azure;
@@ -28,7 +28,9 @@ body {
     cursor: pointer;
 }
 .counter_p {
+    margin: auto;
     margin-top: 150px;
+    margin-bottom: 50px;
     text-align: center;    
     width: 500px;
     height: 20px;
