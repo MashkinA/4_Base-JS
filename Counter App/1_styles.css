@@ -21,9 +21,30 @@ body {
     line-height: 30px;
     font-family: 'Manrope';
     font-weight: 500;
+    margin-bottom: 50px;
 }
 .counter_button:hover {
     color: blue;
+    background-color: white;
+    cursor: pointer;
+}
+.counter_reset {
+    margin: auto;
+    width: 500px;
+    height: 100px;
+    color: azure;
+    background-color: red;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid red;
+    display: block;
+    font-size: 30px;
+    line-height: 30px;
+    font-family: 'Manrope';
+    font-weight: 500;
+}
+.counter_reset:hover {
+    color: red;
     background-color: white;
     cursor: pointer;
 }
