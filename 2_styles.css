@@ -1,0 +1,53 @@
+.body {
+    font-family: 'Manrope';
+}
+.row {
+    display: flex;
+    gap: 100px;
+}
+.wall_msg {
+    margin-top: 100px;
+    width: 500px;
+    box-sizing: border-box;
+}
+.enter_msg {
+    margin-top: 100px;
+    margin-left: 200px;
+    width: 500px;
+    box-sizing: border-box;
+}
+h1 {
+    margin-bottom: 60px;
+    font-family: 'Manrope';
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: 700;
+}
+.user_title {
+    margin-bottom: 30px;
+    display: block;
+    height: 60px;
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 0px;
+    box-sizing: border-box;
+}
+.post_btn {
+    display: block;
+    height: 60px;
+    width: 500px;
+    background-color: #0094FF;
+    border: 1px solid #0094FF;
+    border-radius: 0px;
+    box-sizing: border-box;
+    color: azure;
+    font-family: 'Manrope';
+    font-size: 28px;
+    line-height: 60px;
+    font-weight: 500;
+}
+.post_btn:hover {
+    color: #0094FF;
+    background-color: azure;
+    cursor: pointer;
+}
