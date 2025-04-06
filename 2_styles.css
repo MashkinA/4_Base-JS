@@ -32,6 +32,15 @@ h1 {
     border-radius: 0px;
     box-sizing: border-box;
 }
+.user_text {
+    margin-bottom: 30px;
+    display: block;
+    height: 250px;
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 0px;
+    box-sizing: border-box;
+}
 .post_btn {
     display: block;
     height: 60px;
