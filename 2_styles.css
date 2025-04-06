@@ -60,3 +60,19 @@ h1 {
     background-color: azure;
     cursor: pointer;
 }
+.wall_post_title {
+    margin-bottom: 15px;
+    width: 500px;
+    font-family: 'Manrope';
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 700;
+}
+.wall_post_text {
+    margin-bottom: 50px;
+    width: 500px;
+    font-family: 'Manrope';
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 400;
+}
