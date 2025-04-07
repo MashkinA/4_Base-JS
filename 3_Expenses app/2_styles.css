@@ -1,0 +1,7 @@
+.body {
+    font-family: 'Manrope';
+}
+.row {
+    display: flex;
+    gap: 100px;
+}

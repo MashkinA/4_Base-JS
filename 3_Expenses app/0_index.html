@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="1_reset.css">
+    <link rel="stylesheet" href="2_styles.css">
+</head>
+<body>
+    <h1>Учет расходов</h1>
+    <div class="row">
+        <div class="leftSide">
+            <input 
+            id="input"
+            class='user_input'
+            placeholder="Введите стоимость в рублях"
+            type="number">
+
+            <p
+            id="limit" 
+            class="p_bold">
+                Лимит:
+            </p>
+            
+            <p
+            id="sum" 
+            class="p_bold">
+                Всего:
+            </p>
+
+            <p
+            id="status" 
+            class="p_bold">
+                Статус:
+            </p>
+        </div>
+
+        <div class="rightSide">
+            <button 
+            id="btn"
+            class="add_btn">
+                Добавить
+            </button>
+
+            <p class="p_bold">
+                История:
+            </p>
+
+            <div
+            id="history" 
+            class="user_history">
+                Тут пока еще ничего нет...
+            </div>
+        </div>
+    </div>
+    <script src="3_code.js"></script>
+</body>
+</html>
