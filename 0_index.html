@@ -17,14 +17,21 @@
     <div class="row">
         <div class="enter_msg">
             <h1>Новый пост</h1>
-            <input class='js-user_title user_title' 
+            <input 
+            class='js-user_title user_title'
+            placeholder="Заголовок" 
             type="text">
-            <input class='js-user_text user_text' 
+            <input 
+            class='js-user_text user_text'
+            placeholder="Напиши пост"
             type="text">
     
             <button class="js-post_btn post_btn">
                 Опубликовать
             </button>
+            <div id="validation_msg" class="validation_msg validation_msg_hidden">
+                Длина заголовка не должна превышать 100 символов
+            </div>
         </div>
         <div class="wall_msg">
             <h1>Лента</h1>

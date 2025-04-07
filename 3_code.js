@@ -4,6 +4,7 @@ const titleinputNode = document.querySelector('.js-user_title');
 const textinputNode = document.querySelector('.js-user_text');
 const postNode = document.querySelector('.js-post_btn');
 const postsNode = document.querySelector('.js-posts');
+const validation_msg = document.getElementById('validation_msg');
 
 postNode.addEventListener('click', function() {
 
@@ -13,19 +14,53 @@ postNode.addEventListener('click', function() {
     
     renderposts();
 
+    document.querySelector('.js-user_title').value = '';
+    document.querySelector('.js-user_text').value = '';
 });
 
+titleinputNode.addEventListener('input', function() {
+    validation();
+});
+textinputNode.addEventListener('input', function() {
+    validation();
+});
+
+function validation() {
+    const titleLen = titleinputNode.value.length;
+    const textLen = textinputNode.value.length;
+    if (titleLen > 10) {
+        validation_msg.innerText = `Длина заголока не должна превышать 10 символов`;
+        validation_msg.classList.remove("validation_msg_hidden");
+        postNode.setAttribute('disabled', '');
+        return;
+    };
+    if (textLen > 20) {
+        validation_msg.innerText = `Длина текста не должна превышать 20 символов`;
+        validation_msg.classList.remove("validation_msg_hidden");
+        postNode.setAttribute('disabled', '');
+        return;
+    };
+    validation_msg.classList.add("validation_msg_hidden");
+    postNode.removeAttribute('disabled', '');
+};
+
 function getPostFromUser() {
-    const post_title = titleinputNode.value;
-    const post_text = textinputNode.value;
+    const title = titleinputNode.value;
+    const text = textinputNode.value;
 
     return post = {
-        title: post_title,
-        text: post_text,
+        title: title,
+        text: text,
     };
 };
-function addPost(post) {
-    posts.push(post);
+function addPost({title, text}) {
+    const currentDate = new Date();
+    const dt = `${currentDate.getDate()}.${currentDate.getMonth()}.${currentDate.getFullYear()}  ${currentDate.getHours()}:${currentDate.getMinutes()}`;
+    posts.push({
+        dt,
+        title,
+        text,
+});
 };
 function getposts() {
     return posts;
@@ -38,6 +73,9 @@ function renderposts() {
     posts.forEach(post => {
         postsHTML += `
             <div class='post'>
+                <p class='wall_post_date'>
+                ${post.dt}
+                </p>
                 <p class='wall_post_title'>
                 ${post.title}
                 </p>

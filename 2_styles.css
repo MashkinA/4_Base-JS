@@ -60,6 +60,19 @@ h1 {
     background-color: azure;
     cursor: pointer;
 }
+.post_btn:disabled {
+    opacity: 0.5;
+}
+
+.wall_post_date {
+    margin-bottom: 15px;
+    width: 500px;
+    font-family: 'Manrope';
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 400;
+    color: #0094FF;
+}
 .wall_post_title {
     margin-bottom: 15px;
     width: 500px;
@@ -75,4 +88,16 @@ h1 {
     font-size: 25px;
     line-height: 25px;
     font-weight: 400;
+}
+.validation_msg {
+    margin-top: 50px;
+    width: 500px;
+    font-family: 'Manrope';
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 400;
+    color: red;
+}
+.validation_msg_hidden {
+    display: none;
 }
