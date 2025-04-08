@@ -57,3 +57,12 @@ h2 {
     line-height: 24px;
     font-weight: 400;
 }
+.user_history {
+    font-family: 'Manrope';
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+    width: 500px;
+}
