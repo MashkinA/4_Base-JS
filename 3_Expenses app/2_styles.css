@@ -5,3 +5,9 @@
     display: flex;
     gap: 100px;
 }
+.status_green {
+    color: green;
+}
+.status_red {
+    color: red;
+}

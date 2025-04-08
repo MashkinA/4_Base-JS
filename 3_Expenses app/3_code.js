@@ -1,5 +1,8 @@
 const expenses = [];
 const limit = 10000;
+const currensy = 'руб.';
+const statusPositive = 'Все хорошо';
+const statusNegative = 'Лимит превышен';
 
 const inputNode = document.getElementById('input');
 const btnNode = document.getElementById('btn');
@@ -8,9 +11,15 @@ const sumNode = document.getElementById('sumer');
 const limitNode = document.getElementById('limit');
 const statusNode = document.getElementById('status');
 
-//
-limitNode.innerText = limit;
-//
+
+initWallet();
+
+function initWallet() {
+    limitNode.innerText = `${limit} ${currensy}`;
+    sumNode.innerText = `-`;
+    statusNode.innerText = `Не определено`;
+};
+
 
 btnNode.addEventListener('click', function() {
     if (!inputNode.value) {
@@ -23,7 +32,7 @@ btnNode.addEventListener('click', function() {
     //
     let expensesListHTML = '';
     expenses.forEach(element => {
-        expensesListHTML += `<li>${element} руб.</li>`;
+        expensesListHTML += `<li>${element} ${currensy}</li>`;
     });
 
     historyNode.innerHTML = `<ol>${expensesListHTML}</ol>`;
@@ -32,13 +41,15 @@ btnNode.addEventListener('click', function() {
     expenses.forEach(element => {
         sum += element;
     });
-    sumNode.innerText = `${sum} руб.`;
+    sumNode.innerText = `${sum} ${currensy}.`;
     
     //
     if (sum <= limit) {
-        statusNode.innerText = `Все хорошо`;
+        statusNode.innerText = statusPositive;
+        statusNode.classList.add('status_green');
     } else {
-        statusNode.innerText = `Лимит превышен`;
+        statusNode.innerText = statusNegative1;
+        statusNode.classList.add('status_red');
     };
 });
     
