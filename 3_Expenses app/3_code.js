@@ -14,43 +14,76 @@ const statusNode = document.getElementById('status');
 
 initWallet();
 
+btnNode.addEventListener('click', function() {
+    expense = getExpenseByUser();
+    if (!expense) {
+        return;
+    };
+    
+    trackExpense(expense);
+    
+    render(expenses);
+});
+
 function initWallet() {
     limitNode.innerText = `${limit} ${currensy}`;
     sumNode.innerText = `-`;
     statusNode.innerText = `Не определено`;
 };
 
-
-btnNode.addEventListener('click', function() {
+function getExpenseByUser() {
     if (!inputNode.value) {
         return;
     }
     const expense = parseInt(inputNode.value);
-    inputNode.value = '';
-    //
-    expenses.push(expense);
-    //
-    let expensesListHTML = '';
-    expenses.forEach(element => {
-        expensesListHTML += `<li>${element} ${currensy}</li>`;
-    });
-
-    historyNode.innerHTML = `<ol>${expensesListHTML}</ol>`;
-    //
-    let sum = 0;
-    expenses.forEach(element => {
-        sum += element;
-    });
-    sumNode.innerText = `${sum} ${currensy}.`;
-    
-    //
-    if (sum <= limit) {
-        statusNode.innerText = statusPositive;
-        statusNode.classList.add('status_green');
-    } else {
-        statusNode.innerText = statusNegative1;
-        statusNode.classList.add('status_red');
+    clearInput();
+    return expense;
+};
+    function clearInput() {
+        inputNode.value = '';
     };
-});
-    
+
+function trackExpense(expense) {
+    expenses.push(expense);
+};
+
+function render(expenses) {
+    sum = calculate(expenses);
+    renderHistory(expenses);
+    renderSum(sum);
+    renderStatus(sum);
+};
+
+    function calculate(expenses) {
+        let sum = 0;
+        expenses.forEach(element => {
+            sum += element;
+        });
+        return sum;
+    };
+
+    function renderHistory (expenses) {
+        let expensesListHTML = '';
+        expenses.forEach(element => {
+            expensesListHTML += `<li>${element} ${currensy}</li>`;
+        });
+
+        historyNode.innerHTML = `<ol>${expensesListHTML}</ol>`;
+    };
+
+    function renderSum(sum) {
+        sumNode.innerText = `${sum} ${currensy}.`;
+    };
+
+    function renderStatus(sum) {
+        if (sum <= limit) {
+            statusNode.innerText = statusPositive;
+            statusNode.classList.add('status_green');
+        } else {
+            statusNode.innerText = statusNegative;
+            statusNode.classList.add('status_red');
+        };
+    };
+
+
     
