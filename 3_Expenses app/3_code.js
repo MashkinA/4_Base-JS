@@ -1,4 +1,4 @@
-const expenses = [];
+let expenses = [];
 const limit = 10000;
 const currensy = 'руб.';
 const statusPositive = 'Все хорошо';
@@ -10,7 +10,7 @@ const historyNode = document.getElementById('history')
 const sumNode = document.getElementById('sumer');
 const limitNode = document.getElementById('limit');
 const statusNode = document.getElementById('status');
-
+const resetBtnNode = document.getElementById('reset_btn');
 
 initWallet();
 
@@ -23,6 +23,11 @@ btnNode.addEventListener('click', function() {
     trackExpense(expense);
     
     render(expenses);
+});
+resetBtnNode.addEventListener('click', function() {
+    expenses = [];
+    historyNode.innerHTML = '';
+    initWallet();
 });
 
 function initWallet() {
@@ -80,10 +85,11 @@ function render(expenses) {
             statusNode.innerText = statusPositive;
             statusNode.classList.add('status_green');
         } else {
-            statusNode.innerText = statusNegative;
+            statusNode.innerText = `${statusNegative} (${limit - sum}) ${currensy}`;
             statusNode.classList.add('status_red');
         };
     };
+
 
 
     

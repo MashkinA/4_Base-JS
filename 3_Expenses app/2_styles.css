@@ -57,6 +57,19 @@ h2 {
     line-height: 24px;
     font-weight: 400;
 }
+.reset_btn{
+    margin-top: 100px;
+    width: 250px;
+    height: 50px;
+    box-sizing: border-box;
+    border: 1px solid #FF0000;
+    background-color: #FF0000;
+    color: white;
+    font-family: 'Manrope';
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+}
 .user_history {
     font-family: 'Manrope';
     margin-top: 30px;
