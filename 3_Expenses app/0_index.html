@@ -21,11 +21,30 @@
             class='user_input'
             placeholder="Введите стоимость в рублях"
             type="number">
+            
+            <div>
+                <select class="categorySelect" id="select">
+                    <option hidden="" disabled="" selected value="Категория">
+                        Категория
+                    </option>
+                    <option value="Продукты">Продукты</option>
+                    <option value="Кафе">Кафе</option>
+                    <option value="Квартира">Квартира</option>
+                    <option value="Авто">Авто</option>
+                </select>
+            </div>
 
             <p
             class="p_bold">
                 Лимит: <span id="limit" class="p_light"></span>
+                <span><img 
+                    id="changeLimit"
+                    class="limitBtn"
+                    src="image 1.png" 
+                    alt="">
+                </span>
             </p>
+            
             
             <p
             class="p_bold">
