@@ -1,0 +1,28 @@
+body {
+    background-color: #181818;
+    font-family: 'Arimo';
+    color: #F3F6F9;
+}
+.wrapper {
+    margin-left: 255px;
+    width: 930px;
+}
+.tag_str{
+    display: flex;
+}
+.tag {
+    margin-top: 80px;
+    margin-left: 73px;
+    padding: 10px;
+    width: auto;
+    border-radius: 15px;
+    background-color: #6532F8;
+    line-height: 10px;
+    font-size: 10px;
+    font-weight: 400;
+    text-align: center;
+    box-sizing: border-box;
+}
+.tag:last-child {
+    margin-left: 5px;
+}
