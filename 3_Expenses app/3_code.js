@@ -1,26 +1,18 @@
 let expenses = [];
+let limit = 10000;
 const currensy = 'руб.';
 const statusPositive = 'Все хорошо';
 const statusNegative = 'Лимит превышен';
-const storage_label_expenses = "expences";
 
 const inputNode = document.getElementById('input');
 const btnNode = document.getElementById('btn');
 const historyNode = document.getElementById('history')
 const sumNode = document.getElementById('sumer');
+const limitNode = document.getElementById('limit');
 const statusNode = document.getElementById('status');
 const resetBtnNode = document.getElementById('reset_btn');
 const categorySelectNode = document.getElementById('select');
 const limitBtnNode = document.getElementById('changeLimit');
-
-//
-const limitNode = document.getElementById('limit');
-limitNode.innerText = localStorage.getItem('limit');
-if (!localStorage.getItem('limit')) {
-    limitNode.innerText = 10000;
-};
-let limit = parseInt(limitNode.innerText);
-//
 
 initWallet();
 
@@ -44,28 +36,20 @@ limitBtnNode.addEventListener('click', function() {
 
     limitNode.innerText = new_limit_value;
     limit = new_limit_value;
-    localStorage.setItem('limit', new_limit_value);
 
     render(expenses);
 });
 
 resetBtnNode.addEventListener('click', function() {
     expenses = [];
-    expensesFromStorageObj = [];
     historyNode.innerHTML = '';
     initWallet();
 });
 
 function initWallet() {
     limitNode.innerText = `${limit} ${currensy}`;
-    const expensesFromStorageStr = localStorage.getItem(storage_label_expenses);
-    const expensesFromStorageObj = JSON.parse(expensesFromStorageStr);
-    render(expensesFromStorageObj);
-    if (expensesFromStorageObj < 1) {
-        sumNode.innerText = `-`;
-        statusNode.innerText = `Не определено`;
-    };
-
+    sumNode.innerText = `-`;
+    statusNode.innerText = `Не определено`;
 };
 
 function getExpenseByUser() {
@@ -92,8 +76,6 @@ function getExpenseByUser() {
 
 function trackExpense(a) {
     expenses.push(a);
-    const expStr = JSON.stringify(expenses);
-    localStorage.setItem(storage_label_expenses, expStr);
 };
 
 function render(expenses) {
