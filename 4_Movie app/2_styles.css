@@ -71,3 +71,6 @@ h2 {
     background-repeat: no-repeat;
     background-position: 50%;
 }
+ol, ul {
+    list-style: circle;
+}

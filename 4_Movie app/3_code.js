@@ -12,7 +12,7 @@ btnNode.addEventListener('click', function(){
         return;
     }
     trackFilm();
-    console.log(list);
+    renderlist();
 });
 
 function init() {
@@ -21,8 +21,7 @@ function init() {
     list = listFromStorage;
     if (!list) {
         list = [];
-    }
-    console.log(list);
+    };
     renderlist();
 };
 function getFilmFromUser() {
@@ -46,5 +45,4 @@ function renderlist () {
         ListHTML += `<li>${element}</li>`;
     });
     listNode.innerHTML = `<ol>${ListHTML}</ol>`;
-    console.log(a);
 };
