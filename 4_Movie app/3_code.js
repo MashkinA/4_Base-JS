@@ -42,7 +42,7 @@ function trackFilm() {
 function renderlist () {
     let ListHTML = '';
     list.forEach(element => {
-        ListHTML += `<li>${element}</li>`;
+        ListHTML += `<li class="list_string"><span class="string">${element}</span></li>`;
     });
     listNode.innerHTML = `<ol>${ListHTML}</ol>`;
 };
