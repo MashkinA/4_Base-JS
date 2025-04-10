@@ -53,6 +53,10 @@ h2 {
     background-color: #232323;
     border: none;
     box-shadow: 0px 1px 0px 0px gray;
+    color: #F3F6F9;
+    font-size: 21px;
+    opacity: 50%;
+
 }
 .input_css::placeholder {
     color: #F3F6F9;
@@ -75,7 +79,17 @@ ol, ul {
     list-style: none;
 }
 .list_string {
-    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-left: 20px;
+    width: 790px;
+    height: 71px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #3A3939;
+    position: relative;
+}
+.list_string:last-child {
     padding-left: 20px;
     width: 790px;
     height: 71px;
@@ -113,7 +127,7 @@ ol, ul {
 .user_list {
     margin-top: 40px;
     width: 810px;
-    height: 295px;
+    height: 292px;
     overflow: hidden;
     overflow-y: scroll;
     white-space: nowrap;
@@ -128,5 +142,5 @@ ol, ul {
 }
 .user_list::-webkit-scrollbar-track {
     border-radius: 10px;
-    background-color: #F3F6F9;
+    background-color: #232323;
 }

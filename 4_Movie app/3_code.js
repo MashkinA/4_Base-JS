@@ -1,27 +1,12 @@
 let film = '';
-
+let list = [];
 const inputNode = document.getElementById('input');
 const btnNode = document.getElementById('inputBtn');
 const listNode = document.getElementById('list');
+let deleteNode = [];
+
 
 init();
-
-const deleteNode = document.querySelectorAll('.delete_btn');
-
-deleteNode.forEach(element => {
-    element.addEventListener('click', function(){
-        console.log(1);
-    });
-});
-
-btnNode.addEventListener('click', function(){
-    getFilmFromUser();
-    if (!film) {
-        return;
-    }
-    trackFilm();
-    renderlist();
-});
 
 function init() {
     const listFromStorageStr = localStorage.getItem('list');
@@ -31,7 +16,34 @@ function init() {
         list = [];
     };
     renderlist();
+    
+    // Вынести в отдельную функцию
+    deleteNode = document.querySelectorAll('.delete_btn');
+
+    deleteNode.forEach((item, index) => {
+        item.addEventListener('click', function(){
+            list.splice(index, 1);
+    
+            const listStr = JSON.stringify(list);
+            localStorage.setItem('list', listStr);
+            
+            init();
+        });
+    });
+    //
 };
+
+
+btnNode.addEventListener('click', function(){
+    getFilmFromUser();
+    if (!film) {
+        return;
+    }
+    trackFilm();
+    init();
+});
+
+
 function getFilmFromUser() {
     if (!inputNode.value) {
         return;
