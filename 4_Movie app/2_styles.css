@@ -4,7 +4,7 @@ body {
     color: #F3F6F9;
 }
 .wrapper {
-    margin-left: 255px;
+    margin: auto;
     width: 930px;
 }
 .tag_str{
@@ -83,6 +83,7 @@ ol, ul {
     box-sizing: border-box;
     border-radius: 10px;
     background-color: #3A3939;
+    position: relative;
 }
 .string {
     color: #F3F6F9;
@@ -101,4 +102,35 @@ ol, ul {
     background-size: contain;
     background-repeat: no-repeat;
     box-sizing: border-box;
+}
+.delete_btn {
+    height: 23px;
+    width: 23px;
+    background-image: url('Cross.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+}
+.user_list {
+    margin-top: 40px;
+    width: 810px;
+    height: 295px;
+    overflow: hidden;
+    overflow-y: scroll;
+    white-space: nowrap;
+}
+.user_list::-webkit-scrollbar {
+    width: 10px;
+}
+  
+.user_list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #6532F8;
+}
+.user_list::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #F3F6F9;
 }
