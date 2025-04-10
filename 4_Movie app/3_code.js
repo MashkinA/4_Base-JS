@@ -3,6 +3,7 @@ let film = '';
 const inputNode = document.getElementById('input');
 const btnNode = document.getElementById('inputBtn');
 const listNode = document.getElementById('list');
+const deleteNode = document.getElementById('delete');
 
 init();
 
@@ -14,6 +15,11 @@ btnNode.addEventListener('click', function(){
     trackFilm();
     renderlist();
 });
+
+deleteNode.addEventListener('click', function(){
+    console.log(1);
+});
+
 
 function init() {
     const listFromStorageStr = localStorage.getItem('list');
@@ -42,7 +48,7 @@ function trackFilm() {
 function renderlist () {
     let ListHTML = '';
     list.forEach(element => {
-        ListHTML += `<li class="list_string"><span class="string">${element}</span><span class="delete_btn"></span></li>`;
+        ListHTML += `<li class="list_string"><span class="string">${element}</span><span id="delete" class="delete_btn"></span></li>`;
     });
     listNode.innerHTML = `<ol>${ListHTML}</ol>`;
 };
